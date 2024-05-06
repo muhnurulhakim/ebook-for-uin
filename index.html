@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebook Kreasi Konten SPESIAL untuk Mahasiswa UIN</title>
+  <style>
+    /* Gaya CSS minimalis */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      background-color: #c32148;
+      color: #fff;
+      padding: 10px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    input {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #c32148;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #confirmation {
+      display: none;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .note {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    footer {
+      font-size: 14px;
+      margin-top: 30px;
+      text-align: center;
+    }
+    footer a {
+      color: #c32148;
+      text-decoration: none;
+    }
+
+    /* Gaya responsif */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+      }
+      input {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ebook Kreasi Konten SPESIAL untuk Mahasiswa UIN</h1>
+    <p>Terimakasih sudah menjadi mahasiswa yang aktif. Teruslah belajar. Gunakan usia mudamu untuk mencoba berbagai macam hal. Kegagalan itu biasa. Mending pernah gagal tapi mencoba, daripada tak pernah gagal karena tak pernah mencoba.</p>
+    <p>Sebagai apresiasi dari saya, silakan download ebook ini. Khusus untuk mahasiswa dan mahasiswi UIN Gusdur, ebook ini saya GRATISKAN!</p>
+    <img src="https://tribelio-s3-production-temp.s3.ap-southeast-1.amazonaws.com/imgupload/20240501/1/6/0/1/0/202405011601001bda4c789c38754f639a376716c5859f." alt="Ebook Cover">
+    <form id="lead-form">
+      <input type="text" placeholder="Nama Lengkap" id="name" required>
+      <input type="email" placeholder="Email" id="email" required>
+      <input type="tel" placeholder="Nomor WhatsApp" id="whatsapp" required>
+      <button type="submit">Download Sekarang</button>
+    </form>
+    <div class="note">Bagi teman lain yang ingin mempelajari materi di dalam ebook ini, silakan download melalui link resmi ini. Terimakasih.</div>
+    <div id="confirmation">
+      <p>Terima kasih telah mengunduh ebook ini! Silakan periksa kotak masuk email Anda untuk mendapatkan tautan unduhan ebook. Jika belum diterima, cek folder spam atau hubungi kami.</p>
+    </div>
+  </div>
+  <footer>
+    <a href="https://muhnurulhakim.medium.com" target="_blank">muhnurulhakim.medium.com</a>
+  </footer>
+
+  <script>
+    // Fungsi untuk menangani pengiriman formulir
+    const form = document.getElementById('lead-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Mencegah pengiriman formulir standar
+
+      // Mengambil nilai input dari formulir
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+
+      // Mengirim data leads ke Google Sheets
+      sendLeadToGoogleSheets(name, email, whatsapp);
+
+      // Menampilkan pesan konfirmasi
+      document.getElementById('confirmation').style.display = 'block';
+      form.reset(); // Mengosongkan formulir
+    });
+
+    // Fungsi untuk mengirim data leads ke Google Sheets
+    function sendLeadToGoogleSheets(name, email, whatsapp) {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxr-dmeLnpU2Fph8sZinmn3k10ZveQiTa7dBVHUdZJPlluCvsKCE1x-QrZI75Vsh-tlYw/exec';
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('whatsapp', whatsapp);
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        console.log('Data leads berhasil dikirim ke Google Sheets');
+      })
+      .catch(error => {
+        console.error('Terjadi kesalahan saat mengirim data leads ke Google Sheets:', error);
+      });
+    }
+  </script>
+</body>
+</html>
