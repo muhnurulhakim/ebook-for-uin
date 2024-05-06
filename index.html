@@ -24,10 +24,10 @@
       margin-bottom: 20px;
       background-color: #ff4d4d;
       color: #fff;
-      padding: 10px 20px;
+      padding: 10px;
       text-align: center;
-      display: block;
       width: 100%;
+      box-sizing: border-box;
     }
     p {
       font-size: 18px;
@@ -77,6 +77,10 @@
     .note::before {
       content: "Catatan: ";
       font-weight: bold;
+      font-size: 16px;
+    }
+    .note-text {
+      font-size: 12px;
     }
     footer {
       font-size: 14px;
@@ -86,6 +90,7 @@
       color: #fff;
       padding: 10px;
       width: 100%;
+      box-sizing: border-box;
     }
     footer a {
       color: #ff4d4d;
@@ -118,8 +123,9 @@
       <input type="tel" placeholder="Nomor WhatsApp" id="whatsapp" required>
       <button type="submit">Download Sekarang</button>
     </form>
-    <div class="note" style="text-align: left;">
-      <br> Bagi teman lain yang ingin mempelajari materi di dalam ebook ini, silakan download melalui link resmi ini. Terimakasih.</div>
+    <div class="note">
+      <span style="font-size: 16px;">Catatan: </span><span class="note-text">Bagi teman lain yang ingin mempelajari materi di dalam ebook ini, silakan download melalui link resmi ini. Terimakasih.</span>
+    </div>
     <div id="confirmation">
       <p>Terima kasih telah mengunduh ebook ini! Silakan periksa kotak masuk email Anda untuk mendapatkan tautan unduhan ebook. Jika belum diterima, cek folder spam atau hubungi kami.</p>
     </div>
