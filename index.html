@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ebook Kreasi Konten SPESIAL untuk Mahasiswa UIN GUSDUR</title>
+  <meta property="og:title" content="Ebook Kreasi Konten SPESIAL untuk Mahasiswa UIN GUSDUR" />
+  <meta property="og:description" content="Terimakasih sudah menjadi mahasiswa yang aktif. Teruslah belajar. Gunakan usia mudamu untuk mencoba berbagai macam hal. Kegagalan itu biasa. Mending pernah gagal tapi mencoba, daripada tak pernah gagal karena tak pernah mencoba." />
+  <meta property="og:image" content="https://s3.ap-southeast-1.amazonaws.com/assets.lynk.id/products/24-04-2024/1713915620596_4262417.svg" />
   <style>
     /* Gaya CSS minimalis */
     body {
@@ -18,6 +21,9 @@
       margin: 0 auto;
       padding: 20px;
       text-align: center;
+      background-color: #333;
+      color: #fff;
+      box-sizing: border-box;
     }
     h1 {
       font-size: 32px;
@@ -86,14 +92,10 @@
       font-size: 14px;
       margin-top: 30px;
       text-align: center;
-      background-color: #333;
-      color: #fff;
       padding: 10px;
-      width: 100%;
-      box-sizing: border-box;
     }
     footer a {
-      color: #ff4d4d;
+      color: #0066cc;
       text-decoration: none;
     }
 
@@ -124,15 +126,15 @@
       <button type="submit">Download Sekarang</button>
     </form>
     <div class="note">
-      <span style="font-size: 16px;">Catatan: </span><span class="note-text">Bagi teman lain yang ingin mempelajari materi di dalam ebook ini, silakan download melalui link resmi ini. Terimakasih.</span>
+      <span style="font-size: 16px;"><p></p></span><span class="note-text">Bagi teman lain yang ingin mempelajari materi di dalam ebook ini, silakan download melalui link resmi ini. Terimakasih.</span>
     </div>
     <div id="confirmation">
       <p>Terima kasih telah mengunduh ebook ini! Silakan periksa kotak masuk email Anda untuk mendapatkan tautan unduhan ebook. Jika belum diterima, cek folder spam atau hubungi kami.</p>
     </div>
+    <footer>
+      <a href="https://muhnurulhakim.medium.com" target="_blank">made by muhnurulhakim</a>
+    </footer>
   </div>
-  <footer>
-    <a href="https://muhnurulhakim.medium.com" target="_blank">muhnurulhakim.medium.com</a>
-  </footer>
 
   <script>
     // Fungsi untuk menangani pengiriman formulir
@@ -167,11 +169,11 @@
       })
       .then(response => {
         console.log('Data leads berhasil dikirim ke Google Sheets');
-      })
-      .catch(error => {
-        console.error('Terjadi kesalahan saat mengirim data leads ke Google Sheets:', error);
-      });
-    }
-  </script>
+})
+.catch(error => {
+console.error('Terjadi kesalahan saat mengirim data leads ke Google Sheets:', error);
+});
+}
+</script>
 </body>
 </html>
