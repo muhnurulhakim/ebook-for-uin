@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ebook Kreasi Konten SPESIAL untuk Mahasiswa UIN</title>
+  <title>Ebook Kreasi Konten SPESIAL untuk Mahasiswa UIN GUSDUR</title>
   <style>
     /* Gaya CSS minimalis */
     body {
@@ -22,14 +22,17 @@
     h1 {
       font-size: 32px;
       margin-bottom: 20px;
-      background-color: #c32148;
+      background-color: #ff4d4d;
       color: #fff;
-      padding: 10px;
+      padding: 10px 20px;
+      text-align: center;
+      display: inline-block;
     }
     p {
       font-size: 18px;
       line-height: 1.5;
       margin-bottom: 30px;
+      text-align: left;
     }
     img {
       max-width: 80%;
@@ -52,7 +55,7 @@
       box-sizing: border-box;
     }
     button {
-      background-color: #c32148;
+      background-color: #ff4d4d;
       color: #fff;
       padding: 10px 20px;
       border: none;
@@ -65,16 +68,25 @@
       margin-bottom: 30px;
     }
     .note {
-      font-size: 16px;
+      font-size: 14px;
       margin-bottom: 30px;
+      font-style: italic;
+      text-align: left;
+    }
+    .note::before {
+      content: "Catatan: ";
+      font-weight: bold;
     }
     footer {
       font-size: 14px;
       margin-top: 30px;
       text-align: center;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
     }
     footer a {
-      color: #c32148;
+      color: #fff;
       text-decoration: none;
     }
 
@@ -104,7 +116,7 @@
       <input type="tel" placeholder="Nomor WhatsApp" id="whatsapp" required>
       <button type="submit">Download Sekarang</button>
     </form>
-    <div class="note">Bagi teman lain yang ingin mempelajari materi di dalam ebook ini, silakan download melalui link resmi ini. Terimakasih.</div>
+    <div class="note" style="text-align: left;">Catatan: Bagi teman lain yang ingin mempelajari materi di dalam ebook ini, silakan download melalui link resmi ini. Terimakasih.</div>
     <div id="confirmation">
       <p>Terima kasih telah mengunduh ebook ini! Silakan periksa kotak masuk email Anda untuk mendapatkan tautan unduhan ebook. Jika belum diterima, cek folder spam atau hubungi kami.</p>
     </div>
